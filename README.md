@@ -930,22 +930,22 @@ cdr-phase1-validation/
 
 **Energy system validation:**
 ```bash
-python src/phase2_runner.py
+python -m src.phase2_runner
 ```
 
 **fMRI validation:**
 ```bash
-python src/phase2_runner_fmri.py
+python -m src.phase2_runner_fmri
 ```
 
 **Mobility validation:**
 ```bash
-python src/phase2_runner_mobility.py
+python -m src.phase2_runner_mobility
 ```
 
 **Ecology validation:**
 ```bash
-python src/phase2_runner_ecology.py
+python -m src.phase2_runner_ecology
 ```
 
 **Protein validation:**
