@@ -45,9 +45,7 @@ class Phase3EEGConfig:
 
     state_columns: Tuple[str, ...] = (
         "delta_power",
-        "theta_power",
         "alpha_power",
-        "beta_power",
     )
 
     # Keep stage information available in the loader/results,
@@ -99,7 +97,6 @@ class Phase3EEGConfig:
     train_ratio: float = 0.75
 
     # F3 holdout strategy
-    # Recommended for EEG: block_interleaved
     f3_holdout_mode: str = "block_interleaved"
     f3_block_size: int = 20
 
@@ -109,7 +106,7 @@ class Phase3EEGConfig:
     eeg_control_stage_shuffle: bool = True
 
     # Gates / thresholds
-    inj_eps_true: float = 0.25
+    inj_eps_true: float = 0.05
     gate_tol_abs: float = 0.08
     control_tol: float = 0.05
     control_fraction: float = 0.75
