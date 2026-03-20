@@ -36,26 +36,29 @@ Thumbs.db
 *.key
 *.pem
 
-# (tudo da Opção A) ...
-
-# ---- Outputs / runs ----
-results/*
-!results/.gitkeep
-
-# allow minimal golden run evidence (small text/json only)
-!results/golden_run_phase1_plus_v1/
-!results/golden_run_phase1_plus_v1/gate_report.txt
-!results/golden_run_phase1_plus_v1/phase1plus_summary.json
-!results/golden_run_phase1_plus_v1/seed_manifest.json
-!results/golden_run_phase1_plus_v1/artifacts_manifest.json
-
-# keep zip/plots out of git
-results/**/plots/
-results/**/run_bundle.zip
-
-
+# ---- Data (exclude large files) ----
 data/raw/
 data/interim/
 data/processed/
 *.sqlite
-*.csv
+
+# Keep small CSVs if needed for examples
+# data/**/*.csv
+
+# ---- Results (SELECTIVE) ----
+# Exclude large files (plots, zips, large CSVs)
+results/**/plots/
+results/**/run_bundle.zip
+results/**/*.png
+results/**/*.jpg
+results/**/*.pdf
+
+# Exclude likelihood curves (can be large)
+results/**/ll_*.png
+
+# INCLUDE results JSONs (small, important)
+!results/**/*.json
+!results/**/*.txt
+
+# Keep .gitkeep
+!results/.gitkeep
